@@ -38,6 +38,6 @@ street: "Lalaland 12"
 const { address: {street} } = person;
 console.log(street)
 
-const avaliaEmpresa = () => companies.map((companie) => companie.start > 1996 && companie.end < 2004 === true)
+const avaliaEmpresa = () => companies.map((companie) => companie.start > 1996 && companie.start <= 2004 ?  true : false)
 console.log(avaliaEmpresa())
 
