@@ -23,16 +23,13 @@
 
 
 const name = (a) => {
-  const promise = new Promise((resolve, reject) => {
+  return promise = new Promise((resolve, reject) => {
     if(a != "javascript"){
       resolve(a)
     } else (
       reject("Nome não é um nome")
     )
   })
-  
-  promise
-  .then((result) => console.log(result)).catch((err) => console.log(err))
 }
 
 name('Marcus')
