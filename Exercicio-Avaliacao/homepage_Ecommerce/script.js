@@ -53,7 +53,7 @@ const updateCart = async () => {
     });
 
     if (!response.ok) {
-      throw new Error('Falha ao conectar ao cart');
+      throw new Error('Falha ao conectar a Carts');
     }
 
     const data = await response.json();
