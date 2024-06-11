@@ -6,9 +6,9 @@ function searchAnime(year) {
     myRequest.send()
 
     myRequest.onload = function() {
-      const animes = myRequest.response
-      const filteredAnimes = animes.data.filter((anime) => anime.year === year).map((anime) => `Título: ${anime.title}`)
-      resolve(filteredAnimes.length === 0 ? (`Nenhum anime encontrado para o ano de ${year}` ) : filteredAnimes)
+      const animes = myRequest.response.data
+      const filteredAnimes = animes.filter((anime) => anime.year === year)
+      resolve(filteredAnimes.length === 0 ? `Nenhum anime encontrado para o ano de ${year}` : filteredAnimes)
     }
 
     myRequest.onerror = function() {
@@ -18,6 +18,7 @@ function searchAnime(year) {
 }
 
 searchAnime(2008)
-.then((result) => console.log(result))
+.then((result) => result.map((anime) => `Título: ${anime.title}`))
 .catch((error) => console.error(error))
-
+  
+  
