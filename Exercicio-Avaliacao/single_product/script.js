@@ -27,12 +27,13 @@ const createRelatedProducts = (product) => {
   const relatedProductsCard = document.createElement('div')
   relatedProductsCard.className = 'related-product-card'
   relatedProductsCard.innerHTML = `
-  <div class="product-info related">
   <div class="related-product-image"><img src="${product.image}"></div>
-  <h3 class="related-product-title>${product.title}</h3>
-  <p class="related-product-description">Description: ${product.description}</p>
+  <div class="related-product-info">
+  <h3 class="related-product-title">${product.title}</h3>
   <p class="related-product-price">Price: $${product.price}</p>
+  <p class="related-product-description">${product.description}</p>
   <span class="related-product-id"> ID: ${product.id}</span>
+  <button class="btn-add-to-cart-related">Add To Cart</button>
   </div>
   ` 
   return relatedProductsCard
